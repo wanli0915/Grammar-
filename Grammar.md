@@ -25,3 +25,6 @@ list: [1,2,3]
 After ','.join(map(str, list))
 We get: '1,2,3'
 ```
+
+4. defaultdict with int: defaultdict(lambda: -1)
+
