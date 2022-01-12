@@ -57,5 +57,28 @@ Right-Shift (>>) => 把右边的n位 delete 左边加n个0
 ```
 
 6. DP 问题
-  * 背包问题: 找到n个数和为capacity, dp[i]表示是否有这样一种可行方案使得元素和为i
+  * 背包问题: 找到n个数和为capacity, dp[i]表示是否有这样一种可行方案使得元素和为i. [Leetcode416](https://leetcode.com/problems/partition-equal-subset-sum/)
+  * 接龙型：[Leetcode368](https://leetcode.com/problems/largest-divisible-subset/)
+  * 初始化：
+```
+  dp = [False] * (capacity + 1)
 
+```
+
+7. 找到一个数所有的factor，这是包括了1和它本身的版本
+```
+# 用到的方法是对num开根号找factor
+# 一个数x的factor可以以sqrt(x)为分界线划分为两半
+# 1234|681224 每一个sqrt(x)左边的factor都对应sqrt(x）右边的factor
+def get_factors(self, num):
+    factor = 1
+    factors = []
+    while factor * factor <= num:
+        if num % factor == 0:
+            factors.append(factor)
+            # 比如1248，当算到2*2!=8 and 2!=1的时候，append 8//2
+            if factor * factor != num:
+                factors.append(num // factor)
+        factor += 1
+    return factors
+```
