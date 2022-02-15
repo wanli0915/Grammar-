@@ -62,6 +62,7 @@ Right-Shift (>>) => 把右边的n位 delete 左边加n个0
   * 初始化：
 ```
   dp = [False] * (capacity + 1)
+  dp = [[False] * len(s) for _ in range(len(s))]
 
 ```
 
