@@ -82,3 +82,13 @@ def get_factors(self, num):
         factor += 1
     return factors
 ```
+
+8. Sort
+```
+# List根据first value sort [[1,3],[2,6],[8,10],[15,18]]
+intervals = sorted(intervals, key = lambda interval: interval[0])
+
+# Dict根据value sort 倒序
+sorted(d.items(), key=lambda x: x[1], reverse=True)
+```
+
